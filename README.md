@@ -6,7 +6,7 @@ Create a main menu that contains buttons:
 Styling the buttons for yourself, practice animating the buttons, or at least changing the color when pressed.
 
 ###### GIF link https://photos.app.goo.gl/RJKDZTzsVa1ngvoj8
-[] https://github.com/MaryiaOndra/WorkWithUI/blob/mainMenu/MainMenu/ezgif.com-gif-maker.gif
+[](MainMenu/ezgif.com-gif-maker.gif)
 
 ### Task№2 (HealthBar)
 
