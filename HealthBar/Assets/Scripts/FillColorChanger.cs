@@ -13,13 +13,11 @@ public class FillColorChanger : MonoBehaviour
         if (_image != null)
         {
             _from = _image.color;
-            Debug.Log(_from);
         }
     }
 
     public void ChangeFillColor(float position)
     {        
         _image.color = Color.Lerp(_from, _to, position * 0.01f);
-        Debug.Log(_image.color);
     }
 }

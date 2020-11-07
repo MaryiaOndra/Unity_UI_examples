@@ -19,14 +19,13 @@ public class HealthChanger : MonoBehaviour
     {
         _slider = GetComponent<Slider>();
         _slider.maxValue = 100.0f;
-        _slider.DOValue(_startValue, _duration).SetEase(Ease.Linear);
+        _slider.DOValue(_startValue, _duration).SetEase(Ease.InCubic);
     }
 
     public void ChangeValue(float sign) 
     {
         _nextValue = _slider.value + _interval * sign;
         _slider.DOValue(_nextValue, _duration).SetEase(Ease.Linear);
-
         CheckValue();
     }
 

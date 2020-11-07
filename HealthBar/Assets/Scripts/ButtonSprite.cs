@@ -1,18 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Button))]
 public class ButtonSprite : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Sprite _idle;
+    [SerializeField] private Sprite _pressed;
+
+    private static bool _isPressed = false;
+    private Button _button;
+
+    private void Start()
     {
-        
+        _button = GetComponent<Button>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeSprite() 
     {
-        
+        if (!_isPressed)
+        {
+            _button.image.sprite = _pressed;
+            _isPressed = true;
+        }
+        else 
+        {
+            _button.image.sprite = _idle;
+            _isPressed = false;
+        }
     }
 }
