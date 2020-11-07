@@ -1,31 +1,56 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 [RequireComponent(typeof(Slider))]
-
 public class HealthChanger : MonoBehaviour
 {
-    private Slider _slider;
-    private float _currentValue;
-    private float _previousValue;
+    [SerializeField] private Text _notice;
+    [SerializeField] private Image _fill;
+
+    private Slider _slider;   
+
+    private float _interval = 10.0f;
+    private float _duration = 0.3f;
+    private float _startValue = 50.0f;
+    private float _nextValue;
 
     private void Start()
     {
         _slider = GetComponent<Slider>();
-        _currentValue = _slider.value;
+        _slider.maxValue = 100.0f;
+        _slider.DOValue(_startValue, _duration).SetEase(Ease.Linear);
     }
 
-    public void AddHealth(float value) 
+    public void ChangeValue(float sign) 
     {
-        _previousValue = _currentValue;
-        Debug.Log(_previousValue);
-        _currentValue = _currentValue + 10.0f;
-        Debug.Log(_currentValue);
-        _slider.value = Mathf.Lerp(_previousValue, _currentValue, value);        
+        _nextValue = _slider.value + _interval * sign;
+        _slider.DOValue(_nextValue, _duration).SetEase(Ease.Linear);
+
+        CheckValue();
     }
 
-    public void TakeHealth() 
+    private void CheckValue()
     {
-        _slider.value -= 10;    
-    }
+        if (_nextValue > _slider.maxValue)
+        {
+            _notice.text = "MAXIMUM HEALTH!";
+        }
+        else if (_nextValue < _slider.minValue)
+        {
+            _notice.text = "YOU'RE DEAD!";
+        }
+        else if(_nextValue < _slider.value)
+        {
+            _notice.text = "- 10";
+        }
+        else if (_nextValue > _slider.value)
+        {
+            _notice.text = "+ 10";
+        }
+        else
+        {
+            _notice.text = string.Empty;
+        }
+    }    
 }
