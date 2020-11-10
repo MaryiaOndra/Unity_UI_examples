@@ -14,4 +14,4 @@ Styling the buttons for yourself, practice animating the buttons, or at least ch
 We have several buttons and a bar of lives on the stage. When you press one button, the character is healed for 10, when you press another button, damage is done for 10.
 The essence of the task is that when the value of lives changes, our indicator should smoothly change from one value to another.
 
-###### Demo video link https://photos.app.goo.gl/RJKDZTzsVa1ngvoj8 
+###### Demo video link https://photos.app.goo.gl/DH6Qng8PSrvpXbNq9
