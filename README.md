@@ -7,7 +7,7 @@ Styling the buttons for yourself, practice animating the buttons, or at least ch
 
 ###### GIF link https://photos.app.goo.gl/RJKDZTzsVa1ngvoj8
 
-![](ezgif.com-gif-maker.gif)
+![](MainMenu/Screenshot.PNG)
 
 ### Task№2 (HealthBar/Assets/MainScene/)
 
@@ -15,3 +15,8 @@ We have several buttons and a bar of lives on the stage. When you press one butt
 The essence of the task is that when the value of lives changes, our indicator should smoothly change from one value to another.
 
 ###### Demo video link https://photos.app.goo.gl/DH6Qng8PSrvpXbNq9
+
+###### VAR 1.0 
+![](HealthBar/987987987.PNG)
+###### VAR 1.1
+![](HealthBar/Screenshot.PNG)
